@@ -15,9 +15,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-primary/5">
+    <section id="contact" className="py-20 bg-amber-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">Contact Me</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-black">Contact Me</h2>
         <form action={handleSubmit} className="max-w-md mx-auto space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2 text-muted-foreground">Name</label>
@@ -31,7 +31,7 @@ export default function Contact() {
             <label htmlFor="message" className="block text-sm font-medium mb-2 text-muted-foreground">Message</label>
             <Textarea id="message" name="message" placeholder="Your Message" required className="min-h-[120px] bg-background" />
           </div>
-          <Button type="submit" className="w-full">Send Message</Button>
+          <Button type="submit" className="bg-slate-800 hover:bg-slate-950 py-3 px-6 rounded-lg w-full text-white">Send Message</Button>
         </form>
         {message && <p className="mt-6 text-center text-green-500">{message}</p>}
       </div>

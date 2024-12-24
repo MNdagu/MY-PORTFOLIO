@@ -11,12 +11,12 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-secondary/5">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">My Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-black">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="bg-card hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-xl font-semibold text-primary">{project.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-primary text-black">{project.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="mb-4">{project.description}</CardDescription>
