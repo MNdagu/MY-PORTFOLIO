@@ -16,11 +16,7 @@ export default function About() {
             variant="outline"
             className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg"
           >
-            <a
-              href="/placeholder.svg?height=720&width=1280"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" target="_blank" rel="noopener noreferrer">
               Download Resume
             </a>
           </Button>
