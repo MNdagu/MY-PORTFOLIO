@@ -1,13 +1,13 @@
-import { Resend } from "resend"; // Import the Resend package
+// my-app/app/pages/api/contact.js
+// my-app/app/pages/api/contact.js
+import { Resend } from "resend";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const resend = new Resend(process.env.RESEND_API_KEY); // Your Resend API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req, res) {
-  console.log("Received POST request to /api/contact");
-
   try {
     const { name, email, message } = await req.json();
 
@@ -17,20 +17,16 @@ export async function POST(req, res) {
         .json({ success: false, message: "All fields are required." });
     }
 
-    // Send the email using Resend
-    const result = await resend.sendEmail({
-      from: email === null || email === undefined ? "" : email, // Sender's email
-      to:
-        process.env.EMAIL === null || process.env.EMAIL === undefined
-          ? ""
-          : process.env.EMAIL, // Recipient email
+    // Send email using Resend
+    const result = await resend.emails.send({
+      from: "onboarding@resend.dev", // Your verified sender email
+      to: process.env.EMAIL, // Your personal email where you receive messages
+      reply_to: email, // So when you reply, it goes to the sender
       subject: "New Contact Form Submission",
-      text: `Name: ${name === null || name === undefined ? "" : name}\nEmail: ${
-        email === null || email === undefined ? "" : email
-      }\nMessage: ${message === null || message === undefined ? "" : message}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
 
-    if (result === null || result === undefined) {
+    if (!result) {
       throw new Error("Failed to send email using Resend");
     }
 

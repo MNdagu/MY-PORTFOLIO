@@ -1,4 +1,4 @@
-// /actions/contact.js
+// my-app/app/actions/contact.js
 
 export async function submitContactForm(formData) {
   if (!formData) {
@@ -6,7 +6,7 @@ export async function submitContactForm(formData) {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/api/contact", {
+    const response = await fetch("http://127.0.0.1:5000", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -16,13 +16,15 @@ export async function submitContactForm(formData) {
       }),
     });
 
+    console.log("Response Status:", response.status);
+    const data = await response.json();
+    console.log("Response Data:", data);
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      const errorMessage = errorData?.message || "Request failed.";
+      const errorMessage = data?.message || "Request failed.";
       return { success: false, message: errorMessage };
     }
 
-    const data = await response.json().catch(() => ({}));
     const successMessage = data?.message || "Message sent successfully!";
     return { success: true, message: successMessage };
   } catch (error) {
