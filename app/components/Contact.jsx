@@ -3,17 +3,36 @@
 "use client";
 
 import { useState } from "react";
-import { submitContactForm } from "../actions/contact";
 
 export default function Contact() {
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const result = await submitContactForm(formData);
-    setMessage(result.message);
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    const response = await fetch("https://formspree.io/f/xnnjzpgw", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Clear form
+    } else {
+      setStatus("Something went wrong. Try again later.");
+    }
+  };
 
   return (
     <section id="contact" className="py-20 bg-amber-100">
@@ -34,6 +53,8 @@ export default function Contact() {
               name="name"
               type="text"
               required
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Your Name"
               className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500"
             />
@@ -50,6 +71,8 @@ export default function Contact() {
               name="email"
               type="email"
               required
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Your Email"
               className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500"
             />
@@ -65,6 +88,8 @@ export default function Contact() {
               id="message"
               name="message"
               required
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Your Message"
               className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500 min-h-[120px]"
             ></textarea>
@@ -76,9 +101,7 @@ export default function Contact() {
             Send Message
           </button>
         </form>
-        {message && (
-          <p className="mt-6 text-center text-green-500">{message}</p>
-        )}
+        {status && <p className="mt-6 text-center text-green-500">{status}</p>}
       </div>
     </section>
   );

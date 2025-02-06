@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -23,10 +23,13 @@ export default function Footer() {
               <Linkedin size={24} />
               <span className="sr-only">LinkedIn</span>
             </a>
-            {/* <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter size={24} />
-              <span className="sr-only">Twitter</span>
-            </a> */}
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail size={24} />
+              <span className="sr-only">Gmail</span>
+            </a>
           </div>
         </div>
       </div>

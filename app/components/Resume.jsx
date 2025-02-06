@@ -3,35 +3,30 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Solutions Inc.",
-    period: "2020 - Present",
+    title: "IT intern",
+    company: "Kinde Engineering Works Ltd.",
+    period: "2023",
     responsibilities: [
-      "Led a team of 5 developers in building a large-scale React application",
-      "Implemented state management using Redux and optimized performance",
-      "Mentored junior developers and conducted code reviews",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "Innovative Startups Ltd.",
-    period: "2018 - 2020",
-    responsibilities: [
-      "Developed and maintained multiple web applications using React and Node.js",
-      "Designed and implemented RESTful APIs",
-      "Worked closely with UX designers to implement responsive designs",
+      "Supported network installations and maintenance, including configuring routers, switches, and cabling for clients.",
+      "Collaborated with the dispatch team to ensure maximum customer satisfaction in installation and maintenance of internet.",
     ],
   },
 ];
 
 const skills = [
+  "HTML/CSS",
   "JavaScript (ES6+)",
   "React",
+  "Node.js",
   "Next.js",
   "PostgreSQL",
-  "Git",
+  "Github",
   "Python",
-  "Flask",
+  "Flask(Restful API)",
+  "MySQL",
+  "Postman",
+  "Bootstrap",
+  "Tailwind",
 ];
 
 export default function Resume() {
@@ -90,7 +85,7 @@ export default function Resume() {
             className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg"
           >
             <a
-              href="https://drive.google.com/uc?export=download&id=1LFERjkRaJGcuTae44gWOBdurPvCg3GxW"
+              href="https://drive.google.com/uc?export=download&id=1t3kmHv2ydp6rlPLI6GYH85iwfHFaET5o"
               target="_blank"
               rel="noopener noreferrer"
               download="Resume-Mark-Ndagu.pdf"
