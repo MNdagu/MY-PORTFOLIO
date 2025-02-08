@@ -1,3 +1,6 @@
+// my-app/app/components/About.jsx
+/* eslint-disable react/no-unescaped-entities */
+
 import { Button } from "@/components/ui/button";
 
 export default function About() {
