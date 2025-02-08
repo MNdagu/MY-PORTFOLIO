@@ -16,8 +16,13 @@ export default function About() {
             variant="outline"
             className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg"
           >
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Download Resume
+            <a
+              href="https://drive.google.com/uc?export=download&id=1AFVTW-04Y7wk9dh8qTOleDkFpd1G_fuT"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Resume-Mark-Ndagu.pdf"
+            >
+              Download Full Resume
             </a>
           </Button>
         </div>
