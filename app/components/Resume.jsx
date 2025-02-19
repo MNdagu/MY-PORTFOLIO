@@ -20,13 +20,16 @@ const skills = [
   "Node.js",
   "Next.js",
   "PostgreSQL",
-  "Github",
+  "Github/Git",
   "Python",
+  "Django",
   "Flask(Restful API)",
   "MySQL",
   "Postman",
   "Bootstrap",
   "Tailwind",
+  "JWT",
+  "Postman",
 ];
 
 export default function Resume() {

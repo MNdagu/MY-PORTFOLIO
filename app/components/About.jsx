@@ -11,17 +11,18 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-8 text-black">About Me</h2>
           <p className="text-lg mb-8 text-muted-foreground">
             I'm a passionate fullstack developer with experience in Javascript,
-            React, Next.js, and various backend technologies like Python, Flask
-            and PostgreSQL. I love creating efficient, scalable, and
-            user-friendly web applications that solve real-world problems.
+            React, Next.js, Node.js, and various backend technologies like
+            Python, Flask, Django and PostgreSQL. I love creating efficient,
+            scalable, and user-friendly web applications that solve real-world
+            problems.
           </p>
           <Button
             variant="outline"
             className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg"
           >
             <a
-              href="https://drive.google.com/uc?export=download&id=1AFVTW-04Y7wk9dh8qTOleDkFpd1G_fuT"
-              target="_blank"
+              href="https://drive.google.com/uc?export=download&id=1EkjXLjE13cEeDOjQ6zgM1_Bl8UJg1Lue"
+              // target="_blank"
               rel="noopener noreferrer"
               download="Resume-Mark-Ndagu.pdf"
             >
