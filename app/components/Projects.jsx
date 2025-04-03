@@ -26,15 +26,23 @@ const projects = [
   },
   {
     id: 2,
-    title: "Project 2 - Bibliophilia (Personal library management application)",
+    title: "Project 2 - AI Handwriting Recognition System",
+    description:
+      "An AI-powered system that can recognize and digitize handwritten text. Users can upload images of handwritten notes,and the AI will extract the text while preserving formatting.",
+    tags: ["React", "Django", "OpenCV", "Tesseract OCR"],
+    link: "https://github.com/MNdagu/AI-Handwriting-Recognition-System",
+  },
+  {
+    id: 3,
+    title: "Project 3 - Bibliophilia (Personal library management application)",
     description:
       "This was a personal book collection management application where users could add new book to their collection by scanning the book's ISBN code.Tools used include HTML,CSS,React.js. A user could also export their reading list in JSON or CSV format, track their reading analytics and also read using text-to-speech.",
     tags: ["JavaScript", "React", "Tailwind", "Node.js"],
     link: "https://phase2-project-my-books-app.vercel.app/",
   },
   {
-    id: 3,
-    title: "Project 3 - Fit Track (CLI for tracking exercise and nutrition)",
+    id: 4,
+    title: "Project 4 - Fit Track (CLI for tracking exercise and nutrition)",
     description:
       "This was a personal project where I created a command line application using python. A user could create,track and update/manage their workout routines and nutrition.Other tools used include SQLite for database and SQLAlchemy for ORM.",
     tags: ["Python", "SQLAlchemy", "SQLite"],
