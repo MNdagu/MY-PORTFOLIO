@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "AI Handwriting Recognition System",
+    title: "Handwriting Recognition System",
     subtitle: "Machine learning application",
     description:
       "An AI-powered system that can recognize and digitize handwritten text. Users can upload images of handwritten notes, and the AI will extract the text while preserving formatting.",
