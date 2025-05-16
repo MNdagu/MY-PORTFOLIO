@@ -23,9 +23,9 @@ export const projects = [
     title: "Handwriting Recognition System",
     subtitle: "Machine learning application",
     description:
-      "An AI-powered system that can recognize and digitize handwritten text. Users can upload images of handwritten notes, and the AI will extract the text while preserving formatting.",
+      "A system that can recognize and digitize handwritten text. Users can upload images of handwritten notes, and the AI will extract the text while preserving formatting.",
     tags: ["React", "Django", "OpenCV", "Tesseract OCR"],
-    link: "https://github.com/MNdagu/AI-Handwriting-Recognition-System",
+    link: "https://github.com/MNdagu/Handwriting-Recognition-System",
   },
   {
     id: 3,
