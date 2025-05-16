@@ -3,6 +3,11 @@
 "use client";
 
 import { useState } from "react";
+import Section from "@/components/Section";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Mail, Send, User, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,74 +40,104 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-amber-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center text-black">
-          Contact Me
-        </h2>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
+    <Section id="contact" title="Get In Touch" className="bg-primary/20">
+      <div className="max-w-2xl mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium mb-2 text-gray-700"
+              className="block text-sm font-medium mb-2 text-foreground"
             >
               Name
             </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500"
-            />
+            <div className="relative">
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="pl-10"
+                aria-label="Your name"
+              />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            </div>
           </div>
+
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium mb-2 text-gray-700"
+              className="block text-sm font-medium mb-2 text-foreground"
             >
               Email
             </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500"
-            />
+            <div className="relative">
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="pl-10"
+                aria-label="Your email address"
+              />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            </div>
           </div>
+
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium mb-2 text-gray-700"
+              className="block text-sm font-medium mb-2 text-foreground"
             >
               Message
             </label>
-            <textarea
+            <Textarea
               id="message"
               name="message"
               required
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-amber-500 min-h-[120px]"
-            ></textarea>
+              className="min-h-[150px]"
+              aria-label="Your message"
+            />
           </div>
-          <button
+
+          <Button
             type="submit"
-            className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg w-full"
+            className="w-full bg-primary hover:bg-primary/90 text-white"
           >
+            <Send className="h-4 w-4 mr-2" />
             Send Message
-          </button>
+          </Button>
         </form>
-        {status && <p className="mt-6 text-center text-green-500">{status}</p>}
+
+        {status && (
+          <div
+            className={`mt-6 p-4 rounded-lg flex items-center space-x-2 animate-fade-in ${
+              status === "Message sent successfully!"
+                ? "bg-accent/10 text-accent"
+                : status === "Sending..."
+                ? "bg-primary/10 text-primary"
+                : "bg-destructive/10 text-destructive"
+            }`}
+          >
+            {status === "Message sent successfully!" ? (
+              <CheckCircle className="h-5 w-5 flex-shrink-0" />
+            ) : status === "Sending..." ? (
+              <div className="h-5 w-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <AlertCircle className="h-5 w-5 flex-shrink-0" />
+            )}
+            <p>{status}</p>
+          </div>
+        )}
       </div>
-    </section>
+    </Section>
   );
 }

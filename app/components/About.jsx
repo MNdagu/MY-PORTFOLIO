@@ -2,34 +2,39 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { Button } from "@/components/ui/button";
+import Section from "@/components/Section";
+import { resumeLink } from "@/data/resume";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-amber-100">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-black">About Me</h2>
-          <p className="text-lg mb-8 text-muted-foreground">
-            I'm a passionate fullstack developer with experience in Javascript,
-            React,Node.js, and various backend technologies like Python, Flask,
-            Django and PostgreSQL. I love creating efficient, scalable, and
-            user-friendly web applications that solve real-world problems.
-          </p>
-          <Button
-            variant="outline"
-            className="bg-slate-800 hover:bg-slate-950 text-white py-3 px-6 rounded-lg"
+    <Section id="about" title="About Me" className="bg-primary/15">
+      <div className="max-w-3xl mx-auto text-center">
+        <p className="text-lg mb-8 text-foreground animate-fade-in animation-delay-200">
+          I'm a passionate fullstack developer with experience in JavaScript,
+          React, Node.js, and various backend technologies like Python, Flask,
+          Django and PostgreSQL. I love creating efficient, scalable, and
+          user-friendly web applications that solve real-world problems.
+        </p>
+        <p className="text-lg mb-8 text-foreground animate-fade-in animation-delay-400">
+          My approach to development focuses on writing clean, maintainable code
+          and creating intuitive user experiences. I'm constantly learning new
+          technologies and best practices to improve my skills.
+        </p>
+        <Button
+          variant="outline"
+          className="bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg animate-fade-in animation-delay-600"
+          aria-label="Download my resume"
+        >
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Resume-Mark-Ndagu.pdf"
           >
-            <a
-              href="https://drive.google.com/uc?export=download&id=1NUNLZ-QeIiJ1J8hJ0a-cDcWIUdRoEfsd"
-              // target="_blank"
-              rel="noopener noreferrer"
-              download="Resume-Mark-Ndagu.pdf"
-            >
-              Download Full Resume
-            </a>
-          </Button>
-        </div>
+            Download Resume
+          </a>
+        </Button>
       </div>
-    </section>
+    </Section>
   );
 }

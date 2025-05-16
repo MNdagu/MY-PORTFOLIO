@@ -1,8 +1,15 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+/**
+ * Input component
+ * 
+ * @type {React.ForwardRefExoticComponent<React.InputHTMLAttributes<HTMLInputElement> & React.RefAttributes<HTMLInputElement>>}
+ */
+const Input = React.forwardRef(
   ({ className, type, ...props }, ref) => {
     return (
       <input
