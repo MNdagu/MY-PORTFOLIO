@@ -16,13 +16,10 @@ import { truncateText } from "@/lib/utils";
  *
  * @param {Object} props - Component props
  * @param {Object} props.project - Project data
- * @param {number} props.index - Index for animation delay
+ * @param {number} props.index - Index for staggered animation effect
  * @returns {JSX.Element} ProjectCard component
  */
 export default function ProjectCard({ project, index }) {
-  // Calculate animation delay based on index
-  const animationDelay = `animation-delay-${(index % 3) * 200}`;
-
   return (
     <a
       href={project.link}
@@ -31,7 +28,11 @@ export default function ProjectCard({ project, index }) {
       className="block transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       aria-label={`View project: ${project.title}`}
     >
-      <Card className="h-full bg-card hover:shadow-lg transition-shadow cursor-pointer animate-fade-in overflow-hidden">
+      <Card
+        className={`h-full bg-card hover:shadow-lg transition-shadow cursor-pointer animate-fade-in animation-delay-${
+          (index % 3) * 200
+        } overflow-hidden`}
+      >
         <CardHeader className="pb-2">
           <CardTitle className="text-xl font-semibold text-primary">
             {project.title}
